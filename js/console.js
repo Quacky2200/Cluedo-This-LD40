@@ -525,7 +525,7 @@
       } else {
         func = console.type(roomName, 1e10, true, true);
       }
-
+      
       return func.then(function(values) {
         var shouldType = values && values.constructor.name == 'Array' && values[1] === false;
         if (shouldType && includeRoomDescription) {
