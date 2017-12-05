@@ -215,10 +215,8 @@
 		}
 
 		this.addExit = function(direction, room) {
-			inspector.log(direction, room);
 			if (!this.hasExit(direction)) {
 				exits[direction] = room;
-				inspector.log(exits);
 				return true;
 			}
 			return false;

@@ -124,8 +124,7 @@
 		frontdoor.onUse = function() {
 			Room.setCurrentRoom();
 		};
-
-		return 'You go down the stairs slowly one by one in your tired state. ' + (player.hasItem(baby) ? 'You hold onto the railings forcefully' + (!stairway_ls.value ? ' but on the fifth step down you miss a step and your heart skips a beat as you wonder how you are still alive with your newborn' : ' but get down to the bottom safely') : (!stairway_ls.value ? 'You rush down the stairs eagily trying to get to the ringing phone. You end up missing the second to last step and fall quite some distance. Your heart beaten, you feel quite shaken.' : 'You rush down the stairs in a frantic panic trying to get to the phone as quick as possible. You managed to get down the stairs in a remarkable speed.')) + '\n\nYou manage to answer the phone in time.\n\n<span style=\'color: blue\'>Sergeant</span>Morning ' + player.getName() + ', I apologise for the early call but it\'s important that you come down to <i>5 Burrow Road</b> straight away<b>!!!</b>\n\n<span style=\'color: purple\'>' + player.getName() + '</span>A new case?\n\n<span style=\'blue\'>Sergeant</span>Yes, I\'m afraid so. Unfortunately you\'re going to have to deal with a rich family. It seems that people can\'t keep their hands off each other during Christmas. They\'re all in quite a lot of shock.\n\n<span style=\'purple\'>' + player.getName() + '</span>I can imagine! I\'ll come right away but you owe me!\n\n<span style=\'blue\'>Sergeant</span> <i>[Chuckles]</i> We\'ll see how you hold up...';
+		return 'You go down the stairs slowly one by one in your tired state. ' + (player.hasItem(baby) ? 'You hold onto the railings forcefully' + (!stairway_ls.value ? ' but on the fifth step down you miss a step and your heart skips a beat as you wonder how you are still alive with your newborn' : ' but get down to the bottom safely') : (!stairway_ls.value ? 'You rush down the stairs eagily trying to get to the ringing phone. You end up missing the second to last step and fall quite some distance. Your heart beating, you feel quite shaken.' : 'You rush down the stairs in a frantic panic trying to get to the phone as quick as possible. You managed to get down the stairs in a remarkable speed.')) + '\n\nYou manage to answer the phone in time.\n\n<span style=\'color: blue\'>Sergeant </span>Morning ' + player.getName() + ', I apologise for the early call but it\'s important that you come down to <i>5 Burrow Road</b> straight away<b>!!!</b>\n\n<span style=\'color: purple\'>' + player.getName() + ' </span>A new case?\n\n<span style=\'color: blue\'>Sergeant</span>Yes, I\'m afraid so. Unfortunately you\'re going to have to deal with a rich family. It seems that people can\'t keep their hands off each other during Christmas. They\'re all in quite a lot of shock.\n\n<span style=\'color: purple\'>' + player.getName() + ' </span>I can imagine! I\'ll come right away but you owe me!\n\n<span style=\'color: blue\'>Sergeant </span><i>[Chuckles]</i> We\'ll see how you hold up...';
 	};
 
 	masterbedroom.addExit('out', stairway);
@@ -137,18 +136,17 @@
 
 	var outside = new Room('outside');
 	outside.setName('Front Yard');
-	outside.setDescription('The winterery weather hits you as soon as you close the door. Everything is dark and a couple lampposts partially light up the foggy street.');
+	outside.setDescription('The winterery weather hits you as soon as you close the door. A massive tsunami takes out you and the house. Sadly the Burdock area has more tsunamis than any UK town. You died.\n\n\n\n Le Fin. \n\nOk, that\'s a terrible way to go. This project was unable to be completed as part of a Ludum Dare #40. I hope you enjoyed your stay.\n\n\n\n Did you know?\nThere are a couple of cool things you might be able to find out. Stay alert.');//Everything is dark and a couple lampposts partially light up the foggy street.');
 
 
 	// Scene 1 - Go to house - everyone in distress, find every bit of evidence
-/*
+	/*
 	var fy = new Room('front_yard');
 
 	fy.setName('Front Garden');
 
 	fy.description = 'Everyone is standing outside. It\'s cold outside. People are wearing party clothes; not the suitable type for a cold winters night.';
-
-	masterbedroom.addExit('random', fy);*/
+	*/
 
 	return console.startTextualEnvironment();
 

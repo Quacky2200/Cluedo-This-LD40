@@ -523,7 +523,7 @@
       if (typewriter === true) {
         func = console.type(roomName, 1, true, true);
       } else {
-        func = console.log(roomName);
+        func = console.type(roomName, 1e10, true, true);
       }
 
       return func.then(function(values) {
@@ -531,7 +531,7 @@
         if (shouldType && includeRoomDescription) {
           return console.type(room.getDescription(), 1, true, true);
         } else if (includeRoomDescription) {
-          return console.log(room.getDescription());
+          return console.type(room.getDescription(), 1e10, true, true);
         }
       }).then(function(values) {
         // List inventory
@@ -625,7 +625,6 @@
         return console.getInput().then(function(text) {
           return console.normalizeInput(text);
         }).then(function(text) {
-          inspector.log('normalized:', text);
           text = text.toLowerCase();
           var explainAction = function(text) {
             return console.type(text, 1.75, false, false).then(() => {
@@ -682,7 +681,7 @@
               if (args.length == 2) {
                 items = room.getItems();
                 for (i in items) {
-                  itemName = items[i].getName().toLowerCase().replace('', '');
+                  itemName = items[i].getName().toLowerCase().replace(' ', '');
                   if (itemName == args[1]) {
                     return items[i].pickup();
                   }
