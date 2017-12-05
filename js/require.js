@@ -11,7 +11,7 @@
 					if (file.match(/\.(php|htm[l]?|txt)$/)) {
 						resolve(this.responseText);
 					} else if (file.match(/\.(js)$/)) {
-						inspector.log(this.responseText);
+						//inspector.log(this.responseText);
 						var fn = eval(this.responseText + '\n// File: ' + file);
 						if (fn && fn.constructor.name == 'Promise') {
 							// Try to get the resolved promise if one is given to us
@@ -93,8 +93,8 @@
 	]).then(function (required) {
 	    [console] = required;
 		required = undefined;
-		window.$ = $;
-		window.console = console;
+		//window.$ = $;
+		//window.console = console;
 		document.onreadystatechange = function () {
 			if (document.readyState === 'complete') {
 

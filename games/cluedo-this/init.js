@@ -34,25 +34,25 @@
 	}).then(function([title]) {
 		console.clear();
 		console.setMusicVolume(1);
-		//console.playMusic(console.getPath() + '/media/dreaded-things-approach-teknoaxe.mp3');
-		//document.body.innerHTML = title;
+		console.playMusic(console.getPath() + '/media/dreaded-things-approach-teknoaxe.mp3');
+		document.body.innerHTML = title;
 		return new Promise(function(resolve, reject) {
-			//setTimeout(() => {
-				//volumedip = setInterval(function() {
-					//if (console.getMusicVolume() === 0.0) {
-						//console.stopMusic();
-						//console.clear();
-						//console.setMusicVolume(1);
-						//clearInterval(volumedip);
+			setTimeout(() => {
+				volumedip = setInterval(function() {
+					if (console.getMusicVolume() === 0.0) {
+						console.stopMusic();
+						console.clear();
+						console.setMusicVolume(1);
+						clearInterval(volumedip);
 
 						console.playMusic(console.getPath() + '/media/galactic-exploration-machinimasound.mp3');
 						return $(console.getPath() + '/story.js');
 
-					//} else {
-					//	console.setMusicVolume(console.getMusicVolume() - 0.025);
-					//}
-				//}, 100);
-			//}, 10000);
+					} else {
+						console.setMusicVolume(console.getMusicVolume() - 0.025);
+					}
+				}, 100);
+			}, 10000);
 		});
 	});
 }());

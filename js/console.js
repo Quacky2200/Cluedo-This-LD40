@@ -589,7 +589,7 @@
           }
           for (i in roomItems) {
             item = roomItems[i];
-            itemName = item.getName().toUpperCase().replace(' ', '-');
+            itemName = item.getName().toUpperCase().replace(' ', '');
             if (item.canUse) {
               text += 'USE ' + itemName + ' to use the ' + item.getName() + '\n';
             }
@@ -655,14 +655,14 @@
               if (args.length == 2) {
                 var items = player.getItems();
                 for (i in items) {
-                  itemName = items[i].getName().toLowerCase().replace(' ', '-');
+                  itemName = items[i].getName().toLowerCase().replace('', '');
                   if (itemName == args[1]) {
                     return items[i].describe();
                   }
                 }
                 items = room.getItems();
                 for (i in items) {
-                  itemName = items[i].getName().toLowerCase().replace(' ', '-');
+                  itemName = items[i].getName().toLowerCase().replace('', '');
                   if (itemName == args[1]) {
                     return items[i].describe();
                   }
@@ -682,7 +682,7 @@
               if (args.length == 2) {
                 items = room.getItems();
                 for (i in items) {
-                  itemName = items[i].getName().toLowerCase().replace(' ', '-');
+                  itemName = items[i].getName().toLowerCase().replace('', '');
                   if (itemName == args[1]) {
                     return items[i].pickup();
                   }
@@ -695,8 +695,15 @@
               if (args.length == 2) {
                 var items = player.getItems();
                 for (i in items) {
-                  itemName = items[i].getName().toLowerCase().replace(' ', '-');
+                  itemName = items[i].getName().toLowerCase().replace(' ', '');
                   if (itemName == args[1]) {
+                    return items[i].use();
+                  }
+                }
+                items = room.getItems();
+                for (i in items) {
+                  itemName = items[i].getName().toLowerCase().replace(' ', '');
+                  if (itemName == args[1] && !items[i].canPickup && items[i].canUse) {
                     return items[i].use();
                   }
                 }
@@ -708,7 +715,7 @@
               if (args.length == 2) {
                 var items = player.getItems();
                 for (i in items) {
-                  itemName = items[i].getName().toLowerCase().replace(' ', '-');
+                  itemName = items[i].getName().toLowerCase().replace(' ', '');
                   if (itemName == args[1]) {
                     return items[i].drop();
                     break;
@@ -722,7 +729,7 @@
               if (args.length == 2) {
                 var items = player.getItems();
                 for (i in items) {
-                  itemName = items[i].getName().toLowerCase().replace(' ', '-');
+                  itemName = items[i].getName().toLowerCase().replace(' ', '');
                   if (itemName == args[1]) {
                     return items[i].give();
                   }

@@ -241,6 +241,25 @@
 			if (!this.canConverse) {
 				return console.log(this.getName() + ' can\'t talk with you at this time.');
 			}
+			var func = null;
+
+			if (this.onTalk && this.onTalk.constructor.name == 'Function') {
+				func = this.onTalk(this);
+			}
+
+			if (func && func.constructor.name == 'Promise') {
+				return func.then((value) => {
+					if (value === false) {
+						return Promise.resolve();
+					}
+					//return standard.apply(this, [this]);
+					return Promise.resolve();
+					
+				});
+			} else if (func !== false) {
+				return Promise.resolve();
+				//return standard.apply(this, [this]);
+			}
 		};
 
 		this.describe = function() {

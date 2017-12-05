@@ -47,7 +47,7 @@
 	wife.setName('your Wife');
 	wife.setDescription('My beautiful darling Wife. I love her so much.');
 	wife.onTalk = function() {
-		return console.type('<span style=\'color: crimson\'>' + this.getName(true) + ' </span>[faint mumble]</span>\n<span style=\'color: aqua\'>Translation</span>`You go...ZzZzZz. (high-pitched fart)`');
+		return console.type('<span style=\'color: crimson\'>' + this.getName(true) + ' </span>[faint mumble]</span>\n<span style=\'color: aqua\'>Translation </span>`You go...ZzZzZz. (high-pitched fart)`');
 	};
 	wife.canHaveItems = false;
 	wife.canSendItems = false;
@@ -75,7 +75,7 @@
 	};
 	stairway_ls.onUse = function() {
 		this.value = (this.value + 1) % 2;
-		return console.type('The stairway light is now ' + (this.value ? 'on' : 'off') + (this.value ? '. The light flickers for a brief few seconds. The bulb could do with a change.' : '. The place is slightly lit by the moonlight overcasting the house.')).then(() => {return true});
+		return console.type('The stairway light is now ' + (this.value ? 'on' : 'off') + (this.value ? '. The light flickers for a brief few seconds. The bulb could do with a change.' : '. The place is slightly lit by the moonlight overcasting the house.')).then(() => {return false});
 	};
 	stairway.addItem(stairway_ls);
 
