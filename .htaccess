@@ -1,0 +1,7 @@
+Options -Indexes
+RewriteEngine On
+RewriteBase /ld40
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+

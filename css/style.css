@@ -1,0 +1,87 @@
+body, html {width: 100%; margin: 0; padding: 0;}
+body {background: black; width: 100%; max-width: 80ch; text-align: justify; margin: 0; color: white; text-shadow: 0 0 4px gray; padding: 1em; box-sizing: border-box; font-family: monospace; font-size: 1.25em;overflow: hidden;-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
+body::before {content: ''; transform: translateZ(0); width: 100%; height: 100%; position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: url('noise.png');animation: body_fuzz 150ms infinite; animation-timing-function: linear; animation-fill-mode: forwards;}
+body::after {content: ''; transform: translateZ(0); width: 100%; animation: body_scan 10s infinite; animation-delay: 5s; animation-timing-function: ease-in; animation-fill-mode: forwards; position: fixed; top: -100%; left: 0; right:0; background: rgba(128,128,128,0.05); height: 10ch; box-shadow: inset 0 0 2ch black;}
+html::after {content: '(c) Quacky2200'; position: fixed; bottom: 0; right: 0; color: rgba(255,255,255,0.05); padding: 1em; font-family: sans-serif, arial; font-size: 1.25em;}
+@keyframes body_fuzz {
+	0%   {background-position: 0% 0%}
+	100% {background-position: 0% -100%}
+}
+@keyframes body_scan {
+	0%   {top: -10ch}
+	100% {top: 100%}
+}
+pre {white-space: pre-wrap;}
+.sh {color: white; text-shadow: 0 0 4px #666}
+.doctorwho {color: #39abd0; text-shadow: 0px 0px 4px blue;}
+body, .terminal {color: lime; text-shadow: 0 0 4px green;}
+.commandline {color: gray; text-shadow: 0 0 4px #333;}
+.murdermystery {color: #d22; text-shadow: 0 0 4px red;}
+.christmas {color: white; text-shadow: 0 0 4px blue;}
+.halloween {color: black; text-shadow: 1px 1px 0px #ff4700;}
+span.cursor {
+	animation: flashcursor 1s infinite;
+	animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+b[alt-data*='animate'] span:last-child{
+	display:inline-block;
+	animation: boldAppear 150ms;
+	animation-fill-mode: forwards;
+	-webkit-transform: translateZ(0px);
+	transform-origin: center center;
+}
+pre span, i, b, i span, b span {display: inline-block;transition: all 500ms linear;text-shadow: 0 0 4px black;}
+i[alt-data*='animate'] span:last-child{
+	display: inline-block;
+	animation: italicAppear 150ms;
+	animation-fill-mode: forwards;
+	-webkit-transform: translateZ(0px);
+	transform-origin: center center;
+}
+@keyframes italicAppear {
+	0% {
+		color: rgba(0, 0, 0, 0.0);
+		transform: translate(-100%, 0);
+	}
+	100% {
+		transform: translate(0, 0);
+	}
+
+}
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes boldAppear {
+	0% {
+		transform: scale(2, 2);
+		padding: 0 0.5em;
+		color: red;
+	}
+	100% {
+		transform: scale(1, 1);
+		padding: 0em;
+	}
+}
+@keyframes flashcursor {
+	0% {
+		opacity: 1;
+	}
+	25% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	75% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
