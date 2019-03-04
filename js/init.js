@@ -5,9 +5,9 @@
  */
 (function () {
 	Promise.all([
-		$('games/index.php'),
+		$('games/index.json'),
 	]).then(function (required) {
-		let games = JSON.parse(required);
+		let games = required[0];
 		required = undefined;
 		console.setTitle('Console');
 		let commands = {
